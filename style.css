@@ -1,0 +1,275 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* For dark/light mode transition */
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #eee;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+header {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+header.dark-mode {
+    background-color: #1a1a1a;
+    border-color: #333;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+header.dark-mode .logo {
+    color: #fff;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #007bff;
+}
+
+header.dark-mode nav ul li a {
+    color: #eee;
+}
+
+header.dark-mode nav ul li a:hover {
+    color: #64b5f6;
+}
+
+section {
+    padding: 80px 0;
+    position: relative;
+    /* For background image positioning */
+    overflow: hidden;
+    /* Hide overflow from background image */
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('fd099408f7d2823899b828cda6a13dc9.jpg');
+    /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    /* Adjust opacity for subtle effect */
+    pointer-events: none;
+    /* Make it non-interactive */
+    z-index: -1;
+    /* Place it behind content */
+}
+
+.about .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-image img {
+    width: 250px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-text h2 {
+    margin-bottom: 20px;
+    animation: slideInLeft 1s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.skills {
+    background: linear-gradient(135deg, #e0f2f7, #d1c4e9);
+    /* Light gradient */
+    transition: background 0.3s ease;
+}
+
+.skills.dark-mode {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    /* Dark gradient */
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.skill {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+}
+
+.skills.dark-mode .skill {
+    background-color: #2a2a2a;
+    color: #eee;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+}
+
+.project h3,
+.project p {
+    padding: 15px;
+}
+
+.projects.dark-mode .project {
+    background-color: #2a2a2a;
+    color: #eee;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.resume-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.resume-button:hover {
+    background-color: #0056b3;
+}
+
+.resume-button.dark-mode {
+    background-color: #64b5f6;
+    color: #121212;
+}
+
+.resume-button.dark-mode:hover {
+    background-color: #42a5f5;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    transition: background-color 0.3s ease;
+}
+
+footer.dark-mode {
+    background-color: #1a1a1a;
+}
+
+
+/* Dark/Light Mode Toggle (Add this to your HTML and JS) */
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 100;
+}
